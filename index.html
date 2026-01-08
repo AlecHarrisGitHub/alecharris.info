@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alec Harris</title>
+    <meta
+      name="description"
+      content="Alec Harris — personal site, research projects, and contact."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav">
+        <div class="nav__left">
+          <a class="brand" href="/">Alec Harris</a>
+        </div>
+
+        <nav class="nav__right" aria-label="Primary">
+          <a class="nav-link" href="#about">About</a>
+          <a
+            class="nav-cta"
+            href="https://cal.com/alec-harris-qn60gs/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Schedule a Meeting!
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="site-main">
+      <div class="container two-col">
+        <div class="content">
+          <section id="about" class="block">
+            <h1 class="h1">What I Care About</h1>
+            <p class="p">
+              I generally consider myself a utilitarian and a long-termist. I
+              care a lot about AI safety. My P(doom) is a tentative 50%. I am
+              interested in working on technical AI safety research because I
+              think it’s useful and well suited to my aptitudes.
+            </p>
+          </section>
+
+          <section class="block">
+            <h2 class="h2">Credentialing</h2>
+            <p class="p">
+              I am an undergraduate studying computer science at Georgia Tech. I
+              am the Fellowship Lead for the
+              <a href="#" class="link">AI Safety Initiative at Georgia Tech</a>
+              and previously co-led the Effective Altruism club at Georgia Tech.
+              I completed the
+              <a href="#" class="link">Machine Learning Safety Scholars</a>
+              program in 2022. See also
+              <a href="#research" class="link">current research projects</a>.
+            </p>
+          </section>
+
+          <section class="block">
+            <h2 class="h2">Skills</h2>
+            <p class="p">
+              I think I am good at thinking about abstract problems (like
+              math/philosophy-ish things). I think I am good at reasoning about
+              things like goals and probabilities. I think I am also decent at
+              computer science (I would estimate around average for a GT CS
+              grad, which is a little below average for a MATS technical
+              scholar). I think I am conscientious, agentic, and work well with
+              others.
+            </p>
+          </section>
+        </div>
+
+        <aside class="portrait" aria-label="Portrait">
+          <div class="portrait__frame">
+            <img
+              class="portrait__img"
+              src="./assets/portrait.jpg"
+              alt="Portrait photo"
+              loading="eager"
+              decoding="async"
+              onerror="this.style.display='none'; this.parentElement.classList.add('portrait__frame--missing');"
+            />
+          </div>
+          <p class="portrait__hint">
+            If your photo isn’t showing, add it at <code>assets/portrait.jpg</code>.
+          </p>
+        </aside>
+      </div>
+
+      <section id="research" class="research">
+        <div class="container research__inner">
+          <h2 class="research__title">Current Research Projects</h2>
+
+          <article class="research__item">
+            <h3 class="research__heading">
+              Trajectory Normalized Scoring for Neutrality+
+            </h3>
+            <p class="p p--wide">
+              I am working with Elliott Thornley on an RL implementation of
+              Neutrality+ (a part of his
+              <a href="#" class="link">POST-Agency Proposal</a>). Neutrality+
+              agents are theoretically shutdownable because their preferences
+              are represented by an average utility across trajectory lengths
+              rather than an expected utility across trajectory lengths (no
+              weighting by probability). This means they are indifferent to
+              shifting probability across trajectory lengths, which results in
+              them not taking costly actions to avoid shutdown. Our RL
+              implementation uses empirical results for probabilities of
+              trajectory lengths in a batch as an estimator for objective
+              probabilities in order to implement the Neutrality+ objective
+              function.
+            </p>
+          </article>
+
+          <article class="research__item">
+            <h3 class="research__heading">Monitor Sensitive Training (MST)</h3>
+            <p class="p p--wide">
+              I am working with Kasey Corra, Archie Chaudhury, and Yixiong Hao
+              on <a href="#" class="link">MST</a>, a new post-training technique
+              intended to improve on the issues that arise from reward
+              misspecification by modeling feedback as a function of
+              observability. As an example of MST, imagine:
+            </p>
+            <ol class="list">
+              <li>Take preference data from a human evaluator</li>
+              <li>
+                Label the preference data based on time spent evaluating,
+                evaluator expertise, and evaluator background
+              </li>
+              <li>Train a reward model on the labeled preference data</li>
+              <li>
+                Deploy the reward model with a label suggesting high
+                thoroughness, high expertise, and low bias
+              </li>
+            </ol>
+            <p class="p p--wide">
+              The core intuition is to model feedback as a function of our
+              limitations in observability so that we can simulate a standard of
+              evaluation that is much stronger than actually exists. In its most
+              ambitious form, MST trains the model such that it generalizes to
+              completing tasks in exactly the way that we describe them. It
+              takes advantage of the fact that it’s easier to make a
+              description accurately reflect a task than to make a task
+              accurately reflect intended behavior.
+            </p>
+          </article>
+
+          <article class="research__item">
+            <h3 class="research__heading">
+              LLMs for Automated Red Teaming Using Steering Vectors
+            </h3>
+            <p class="p p--wide">
+              I am working with Dr. Kartik Goyal, Andrew Wei, and Sarvesh Tiku
+              on using LLMs for automated red teaming using steering vectors. We
+              find steering vectors for refusal and then train LLMs to create
+              prompts that either over- or under-trigger these vectors in order
+              to create over-refusal and jailbreak prompts.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="schedule" class="footer-cta">
+        <div class="container footer-cta__inner">
+          <h2 class="footer-cta__title">Want to chat?</h2>
+          <p class="p p--wide">
+            Use the button in the top-right to schedule time with me.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
