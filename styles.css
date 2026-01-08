@@ -186,7 +186,7 @@ body {
 }
 
 .portrait__frame--missing::after {
-  content: "Add assets/portrait.jpg";
+  content: "Add assets/portrait.(jpg|jpeg|png|webp)";
   color: rgba(18, 18, 18, 0.65);
   font-weight: 650;
   letter-spacing: -0.01em;

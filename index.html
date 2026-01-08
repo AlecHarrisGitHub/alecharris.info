@@ -77,16 +77,16 @@
         <aside class="portrait" aria-label="Portrait">
           <div class="portrait__frame">
             <img
+              id="portrait-img"
               class="portrait__img"
               src="./assets/portrait.jpg"
               alt="Portrait photo"
               loading="eager"
               decoding="async"
-              onerror="this.style.display='none'; this.parentElement.classList.add('portrait__frame--missing');"
             />
           </div>
           <p class="portrait__hint">
-            If your photo isn’t showing, add it at <code>assets/portrait.jpg</code>.
+            Add your photo as <code>assets/portrait.jpg</code> (or .jpeg/.png/.webp).
           </p>
         </aside>
       </div>
@@ -173,6 +173,42 @@
         </div>
       </section>
     </main>
+
+    <script>
+      (() => {
+        const img = document.getElementById("portrait-img");
+        if (!img) return;
+
+        const frame = img.parentElement;
+        const candidates = [
+          "./assets/portrait.jpg",
+          "./assets/portrait.jpeg",
+          "./assets/portrait.png",
+          "./assets/portrait.webp",
+          "./assets/portrait.avif",
+        ];
+
+        let i = 0;
+        const tryNext = () => {
+          if (i >= candidates.length) {
+            img.style.display = "none";
+            frame?.classList.add("portrait__frame--missing");
+            return;
+          }
+          img.src = candidates[i++];
+        };
+
+        img.addEventListener("load", () => {
+          img.style.display = "";
+          frame?.classList.remove("portrait__frame--missing");
+        });
+
+        img.addEventListener("error", tryNext);
+
+        // If the default src 404s, we’ll fall through to the other candidates.
+        frame?.classList.add("portrait__frame--missing");
+      })();
+    </script>
   </body>
 </html>
 
