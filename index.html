@@ -39,11 +39,11 @@
             <h1 class="h2">What I Care About</h1>
             <p class="p">
               I generally consider myself a utilitarian and a long-termist. I
-              care a lot about AI safety. My P(doom) is a tentative 50%. I am
+              care a lot about AI safety. My P(doom) is a tentative 35%. I am
               interested in working on technical AI safety research. Right now, 
               I am particularly interested in approaches that are highly theoretical, 
               focus on outer alignment/reward mispecification, or involve some kind of 
-              red-teaming/monitoring. This is based on some mixture of my apptitudes 
+              red-teaming/monitoring. This is based on some mixture of my aptitudes
               and the kinds of approaches that I am bullish on in terms of impact.
             </p>
           </section>
@@ -119,35 +119,20 @@
           </article>
 
           <article class="research__item">
-            <h3 class="research__heading">Monitor Sensitive Training (MST)</h3>
+            <h3 class="research__heading">Evaluation-Conditioned Training (ECT)</h3>
             <p class="p p--wide">
-              I am working with Kasey Corra, Archie Chaudhury, and Yixiong Hao
-              on <a href="https://docs.google.com/document/d/16O175BriItZ7weqSS_ywbO7akHTwj6pluMfUrdVJ2wc/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="link">MST</a>, a new post-training technique
-              intended to improve on the issues that arise from reward
-              misspecification by modeling feedback as a function of
-              observability. As an example of MST, imagine:
-            </p>
-            <ol class="list">
-              <li>Take preference data from a human evaluator</li>
-              <li>
-                Label the preference data based on time spent evaluating,
-                evaluator expertise, and evaluator background
-              </li>
-              <li>Train a reward model on the labeled preference data</li>
-              <li>
-                Deploy the reward model with a label suggesting high
-                thoroughness, high expertise, and low bias
-              </li>
-            </ol>
-            <p class="p p--wide">
-              The core intuition is to model feedback as a function of our
-              limitations in observability so that we can simulate a standard of
-              evaluation that is much stronger than actually exists. In its most
-              ambitious form, MST trains the model such that it generalizes to
-              completing tasks in exactly the way that we describe them. It
-              takes advantage of the fact that it’s easier to make a
-              description accurately reflect a task than to make a task
-              accurately reflect intended behavior.
+              I am working with Kasey Corra, Archie Chaudhury, Yixiong Hao, Leo
+              Richter, and Chris Harig on
+              <a href="https://github.com/evaluationconditionedtraining/Evaluation-Conditioned-Training" target="_blank" rel="noopener noreferrer" class="link">Evaluation-Conditioned Training (ECT)</a>,
+              a post-training framework for improving performance under
+              imperfect feedback. ECT conditions training examples on natural
+              language descriptions of the evaluator, then conditions the model
+              on a stronger evaluation regime at deployment. It works as an
+              add-on to methods such as supervised fine-tuning and PPO. In two
+              proof-of-concept experiments using mis-specified feedback, ECT
+              increased political even-handedness under biased training data and
+              reduced sycophancy on arithmetic tasks relative to standard
+              training.
             </p>
           </article>
 
@@ -216,4 +201,3 @@
     </script>
   </body>
 </html>
-
