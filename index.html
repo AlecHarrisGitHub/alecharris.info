@@ -6,24 +6,8 @@
     <title>Alec Harris</title>
     <meta
       name="description"
-      content="Alec Harris — AI safety research, conceptual work on alignment, and current projects."
+      content="Alec Harris — personal site, research projects, and contact."
     />
-    <meta name="theme-color" content="#f4f0e7" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Alec Harris" />
-    <meta
-      property="og:description"
-      content="AI safety research, conceptual work on alignment, and current projects."
-    />
-    <meta property="og:url" content="https://alecharris.info/" />
-    <meta property="og:image" content="https://alecharris.info/assets/og.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Alec Harris" />
-    <meta
-      name="twitter:description"
-      content="AI safety research, conceptual work on alignment, and current projects."
-    />
-    <meta name="twitter:image" content="https://alecharris.info/assets/og.png" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -31,76 +15,41 @@
 
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="/" aria-label="Alec Harris, home">
-          <span class="brand__mark" aria-hidden="true">AH</span>
-          <span>Alec Harris</span>
-        </a>
+        <div class="nav__left">
+          <a class="brand" href="/">Alec Harris</a>
+        </div>
 
-        <nav class="nav__links" aria-label="Primary">
-          <a href="#about">About</a>
-          <a href="#research">Research</a>
-          <a href="#schedule">Contact</a>
+        <nav class="nav__right" aria-label="Primary">
           <a
             class="nav-cta"
             href="https://cal.com/alec-harris-qn60gs/30min"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Schedule a meeting
+            Schedule a Meeting!
           </a>
         </nav>
       </div>
     </header>
 
     <main id="main" class="site-main">
-      <section id="about" class="hero">
-        <div class="container hero__grid">
-          <div class="hero__copy">
-            <p class="eyebrow">AI safety · Conceptual alignment research</p>
-            <h1>Alec<br />Harris</h1>
-            <p class="hero__lede">
-              I work on questions about how advanced AI systems can be made
-              safer, more legible, and more aligned with what we actually want.
-            </p>
-            <div class="hero__actions">
-              <a class="button button--primary" href="#research">Explore my research</a>
-              <a class="button button--text" href="#background">More about me <span aria-hidden="true">↓</span></a>
-            </div>
-          </div>
-
-          <aside class="focus-card" aria-label="Current focus">
-            <p class="focus-card__label">Current focus</p>
-            <p class="focus-card__title">Conceptual work on alignment</p>
-            <p class="focus-card__copy">
-              Clarifying the ideas, assumptions, and priorities that shape
-              technical AI safety research.
-            </p>
-            <span class="focus-card__index" aria-hidden="true">01</span>
-          </aside>
-        </div>
-
-        <div class="container statement">
-          <p class="section-label">What I care about</p>
-          <div class="statement__body">
-            <p>
+      <div class="container two-col">
+        <div class="content">
+          <section id="about" class="block">
+            <h1 class="h2">What I Care About</h1>
+            <p class="p">
               I generally consider myself a utilitarian and a long-termist. I
               care a lot about AI safety. My P(doom) is a tentative 35%. I am
               interested in working on technical AI safety research. Right now,
               I am particularly interested in conceptual writing and alignment
-              research, especially work that clarifies core ideas, assumptions,
-              and priorities. This is based on some mixture of my aptitudes and
-              the kinds of approaches that I am bullish on in terms of impact.
+              research. This is based on some mixture of my aptitudes
+              and the kinds of approaches that I am bullish on in terms of impact.
             </p>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <section id="background" class="background-section">
-        <div class="container background-grid">
-          <article class="info-card">
-            <p class="section-label">Background</p>
-            <h2>Research and community</h2>
-            <p>
+          <section class="block">
+            <h2 class="h2">Credentialing</h2>
+            <p class="p">
               I am an undergraduate studying computer science at Georgia Tech. I
               am a
               <a href="https://www.pivotal-research.org/fellowship" target="_blank" rel="noopener noreferrer" class="link">Pivotal</a>
@@ -113,12 +62,11 @@
               program in 2022. See also
               <a href="#research" class="link">current research projects</a>.
             </p>
-          </article>
+          </section>
 
-          <article class="info-card info-card--accent">
-            <p class="section-label">How I work</p>
-            <h2>Abstract problems, carefully considered</h2>
-            <p>
+          <section class="block">
+            <h2 class="h2">Skills</h2>
+            <p class="p">
               I think I am good at thinking about abstract problems (like
               math/philosophy-ish things). For example, I think I am good at reasoning about
               goals and probabilities. I think I am also decent at
@@ -127,23 +75,32 @@
               scholar). I think I am conscientious, agentic, and work well with
               others.
             </p>
-          </article>
+          </section>
         </div>
-      </section>
+
+        <aside class="portrait" aria-label="Portrait">
+          <div class="portrait__frame">
+            <img
+              id="portrait-img"
+              class="portrait__img"
+              src="./assets/portrait.jpg"
+              alt="Portrait photo"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        </aside>
+      </div>
 
       <section id="research" class="research">
-        <div class="container">
-          <div class="research__header">
-            <p class="section-label">Selected work</p>
-            <h2>Current research</h2>
-            <p>Projects exploring alignment, oversight, and model behavior.</p>
-          </div>
+        <div class="container research__inner">
+          <h2 class="research__title">Current Research Projects</h2>
 
           <article class="research__item">
-            <p class="research__number" aria-hidden="true">01</p>
-            <div class="research__content">
-              <h3>RL Adaptations for Neutrality+</h3>
-              <p>
+            <h3 class="research__heading">
+              RL Adaptations for Neutrality+
+            </h3>
+            <p class="p p--wide">
               I am working with Elliott Thornley on an RL implementation of
               Neutrality+ (a part of his
               <a href="https://www.lesswrong.com/posts/JuRdvZyqaFbvTPemn/shutdownable-agents-through-post-agency-1" target="_blank" rel="noopener noreferrer" class="link">POST-Agency Proposal</a>). Neutrality+
@@ -157,15 +114,12 @@
               trajectory lengths in a batch as an estimator for objective
               probabilities in order to implement the Neutrality+ objective
               function.
-              </p>
-            </div>
+            </p>
           </article>
 
           <article class="research__item">
-            <p class="research__number" aria-hidden="true">02</p>
-            <div class="research__content">
-              <h3>Evaluation-Conditioned Training (ECT)</h3>
-              <p>
+            <h3 class="research__heading">Evaluation-Conditioned Training (ECT)</h3>
+            <p class="p p--wide">
               I am working with Kasey Corra, Archie Chaudhury, Yixiong Hao, Leo
               Richter, and Chris Harig on
               <a href="https://github.com/evaluationconditionedtraining/Evaluation-Conditioned-Training" target="_blank" rel="noopener noreferrer" class="link">Evaluation-Conditioned Training (ECT)</a>,
@@ -178,41 +132,71 @@
               increased political even-handedness under biased training data and
               reduced sycophancy on arithmetic tasks relative to standard
               training.
-              </p>
-            </div>
+            </p>
           </article>
 
           <article class="research__item">
-            <p class="research__number" aria-hidden="true">03</p>
-            <div class="research__content">
-              <h3>LLMs for Automated Red Teaming Using Steering Vectors</h3>
-              <p>
+            <h3 class="research__heading">
+              LLMs for Automated Red Teaming Using Steering Vectors
+            </h3>
+            <p class="p p--wide">
               I am working with Dr. Kartik Goyal, Andrew Wei, and Sarvesh Tiku
               on using LLMs for automated red teaming using steering vectors. We
               find steering vectors for refusal and then train LLMs to create
               prompts that either over- or under-trigger these vectors in order
               to create over-refusal and jailbreak prompts.
-              </p>
-            </div>
+            </p>
           </article>
         </div>
       </section>
 
       <section id="schedule" class="footer-cta">
-        <div class="container footer-cta__grid">
-          <div>
-            <p class="section-label">Get in touch</p>
-            <h2>Want to talk about alignment?</h2>
-          </div>
-          <div class="footer-cta__contact">
-            <p>Schedule a conversation or reach out by email.</p>
-            <a class="button button--light" href="https://cal.com/alec-harris-qn60gs/30min" target="_blank" rel="noopener noreferrer">Schedule a meeting</a>
-            <p class="email">
-              aharris345 <span>[at]</span> gatech <span>[dot]</span> edu
-            </p>
-          </div>
+        <div class="container footer-cta__inner">
+          <h2 class="footer-cta__title">Want to chat?</h2>
+          <p class="p p--wide">
+            Use the button in the top-right to schedule time with me, or reach out via email:
+          </p>
+          <p class="email">
+            aharris345 <span class="email__at">[at]</span> gatech <span class="email__dot">[dot]</span> edu
+          </p>
         </div>
       </section>
     </main>
+
+    <script>
+      (() => {
+        const img = document.getElementById("portrait-img");
+        if (!img) return;
+
+        const frame = img.parentElement;
+        const candidates = [
+          "./assets/portrait.jpg",
+          "./assets/portrait.jpeg",
+          "./assets/portrait.png",
+          "./assets/portrait.webp",
+          "./assets/portrait.avif",
+        ];
+
+        let i = 0;
+        const tryNext = () => {
+          if (i >= candidates.length) {
+            img.style.display = "none";
+            frame?.classList.add("portrait__frame--missing");
+            return;
+          }
+          img.src = candidates[i++];
+        };
+
+        img.addEventListener("load", () => {
+          img.style.display = "";
+          frame?.classList.remove("portrait__frame--missing");
+        });
+
+        img.addEventListener("error", tryNext);
+
+        // If the default src 404s, we’ll fall through to the other candidates.
+        frame?.classList.add("portrait__frame--missing");
+      })();
+    </script>
   </body>
 </html>
